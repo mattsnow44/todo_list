@@ -1,0 +1,11 @@
+<h1>Edit Item</h1>
+
+<%= form_for @item do |f| %>
+
+  <%= f.label :task %>
+  <%= f.text_field :task, placeholder: 'task', required: true %>
+  <br />
+
+  <%= f.submit %>
+
+<% end %>

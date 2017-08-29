@@ -1,0 +1,16 @@
+<h1> ToDo List </h1>
+
+<ol>
+  <% @items.each do |item| %>
+    <li>
+      <!-- <%= item.task %> -->
+      <%= link_to item.task, item_path(item) %>
+      <%= link_to 'Delete', item_path(item), method: :delete %>
+      <%= link_to 'Edit', edit_item_path(item) %>
+
+    </li>
+    <% end %>
+</ol>
+
+<%= link_to 'New Item', new_item_path %>
+<%= link_to 'Home', root_path %>
