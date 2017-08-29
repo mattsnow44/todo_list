@@ -1,5 +1,11 @@
 <h1><%= @item.task %></h1>
-<%= link_to 'Back', items_path %>
 
+<h2><%= @item.description %></h2>
+
+<h3>Priority: <%= @item.priority %></h3>
+
+<h4><%= @item.done ? 'Done' : 'Not Done' %></h4>
+
+<%= link_to 'Back', items_path %>
 <%= link_to 'Edit', edit_item_path(@item) %>
 <%= link_to 'Delete', item_path(@item), method: :delete %>

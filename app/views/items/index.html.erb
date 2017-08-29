@@ -1,16 +1,36 @@
-<h1> ToDo List </h1>
+<h1> To Do List </h1>
 
-<ol>
+<!-- <ol>
   <% @items.each do |item| %>
     <li>
-      <!-- <%= item.task %> -->
+      <%= item.done ? '⬛️' : '🔲' %>
       <%= link_to item.task, item_path(item) %>
+      Priority: <%= item.priority %>
       <%= link_to 'Delete', item_path(item), method: :delete %>
       <%= link_to 'Edit', edit_item_path(item) %>
 
     </li>
     <% end %>
-</ol>
+</ol> -->
+
+<table>
+  <tr>
+    <th scope="col">Done</th>
+    <th scope="col">Task</th>
+    <th scope="col">Priority</th>
+    <th scope="col">Delete</th>
+    <th scope="col">Edit</th>
+  </tr>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.done ? '⬛️' : '🔲' %></td>
+      <td><%= link_to item.task, item_path(item) %></td>
+      <td><%= item.priority %></td>
+      <td><%= link_to '❌', item_path(item), method: :delete %></td>
+      <td><%= link_to '💬', edit_item_path(item) %></td>
+    </tr>
+  <% end %>
+</table>
 
 <%= link_to 'New Item', new_item_path %>
 <%= link_to 'Home', root_path %>

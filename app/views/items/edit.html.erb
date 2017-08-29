@@ -5,6 +5,15 @@
   <%= f.label :task %>
   <%= f.text_field :task, placeholder: 'task', required: true %>
   <br />
+  <%= f.label :description %>
+  <%= f.text_field :description, placeholder: 'description', required: true %>
+  <br />
+  <%= f.label :priority %>
+  <%= f.select :priority, [1, 2, 3] %>
+  <br />
+  <%= f.label :done %>
+  <%= f.check_box :done %>
+  <br />
 
   <%= f.submit %>
 
